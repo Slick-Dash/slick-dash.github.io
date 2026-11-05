@@ -148,7 +148,7 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 5.5rem 0 3.5rem;
+      padding: 6.5rem 0 5rem;
     }
 
     .version-pill {
@@ -242,121 +242,6 @@
     .hero-subtext {
       font-size: 0.82rem;
       color: #64748b;
-    }
-
-    /* Interactive Product Preview Mockup */
-    .mockup-wrapper {
-      margin: 3.5rem auto 5rem;
-      max-width: 1000px;
-      border-radius: 16px;
-      padding: 8px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 100%);
-      box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.1);
-    }
-
-    .browser-window {
-      background: var(--bg-surface);
-      border-radius: 11px;
-      border: 1px solid var(--border-subtle);
-      overflow: hidden;
-    }
-
-    .browser-toolbar {
-      display: flex;
-      align-items: center;
-      padding: 0.75rem 1rem;
-      background: #090b0e;
-      border-bottom: 1px solid var(--border-subtle);
-      gap: 1rem;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .window-dots span {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .address-bar {
-      flex: 1;
-      max-width: 360px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.75rem;
-      color: #64748b;
-      text-align: center;
-    }
-
-    .dashboard-preview {
-      padding: 3.5rem 2rem;
-      background: radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.12), transparent 65%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .preview-clock {
-      font-size: 3.75rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
-
-    .preview-search {
-      width: 100%;
-      max-width: 480px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-highlight);
-      border-radius: 10px;
-      padding: 0.85rem 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .preview-kbd {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.1rem 0.45rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      color: var(--text-main);
-    }
-
-    .preview-tiles {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      width: 100%;
-      max-width: 580px;
-    }
-
-    .tile {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .tile-dot {
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      margin: 0 auto 0.5rem;
-      background: rgba(59, 130, 246, 0.2);
-      border: 1px solid rgba(59, 130, 246, 0.4);
     }
 
     /* Trust / Metrics Strip */
@@ -474,7 +359,7 @@
     /* Corporate Footer */
     footer {
       border-top: 1px solid var(--border-subtle);
-      padding: 3rem 0;
+      padding: 3rem 0 2rem;
       color: #64748b;
       font-size: 0.85rem;
     }
@@ -502,10 +387,24 @@
       color: var(--text-main);
     }
 
+    .contact-small {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #475569;
+      margin-top: 2rem;
+    }
+
+    .contact-small a {
+      color: #64748b;
+      text-decoration: none;
+    }
+
+    .contact-small a:hover {
+      color: var(--text-main);
+    }
+
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .preview-tiles { grid-template-columns: repeat(2, 1fr); }
-      .preview-clock { font-size: 2.75rem; }
     }
   </style>
 </head>
@@ -533,7 +432,7 @@
     <section class="hero">
       <div class="version-pill">
         <span class="version-dot"></span>
-        Slick Dash 2.0 Available Now for Chrome & Firefox
+        Slick Dash 2.0 Available Now for Chrome &amp; Firefox
       </div>
       <h1>Your browser's command center, engineered for speed.</h1>
       <p>Replace your cluttered default tab with a zero-latency workspace. Instant shortcuts, clean typography, and complete privacy right out of the box.</p>
@@ -549,31 +448,6 @@
         </a>
       </div>
       <div class="hero-subtext">Free forever • No account required • Zero telemetry</div>
-
-      <!-- Product Mockup Showcase -->
-      <div class="mockup-wrapper">
-        <div class="browser-window">
-          <div class="browser-toolbar">
-            <div class="window-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <div class="address-bar">New Tab — Slick Dash</div>
-          </div>
-          <div class="dashboard-preview">
-            <div class="preview-clock">09:41 AM</div>
-            <div class="preview-search">
-              <span>Search the web or jump to workspace...</span>
-              <span class="preview-kbd">⌘ K</span>
-            </div>
-            <div class="preview-tiles">
-              <div class="tile"><div class="tile-dot"></div>Workspace</div>
-              <div class="tile"><div class="tile-dot"></div>Mail</div>
-              <div class="tile"><div class="tile-dot"></div>Calendar</div>
-              <div class="tile"><div class="tile-dot"></div>Analytics</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="performance" class="metrics-bar">
@@ -663,12 +537,17 @@
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <div>© 2026 Slick Dash Inc. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="https://chromewebstore.google.com/detail/slick-dash/bffgnckkngmebclpdjniofhenlnommkk">Chrome Web Store</a>
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/slick-dash/">Firefox Add-ons</a>
-        <a href="#features">Product</a>
+    <div class="container">
+      <div class="footer-inner">
+        <div>© 2026 Slick Dash Inc. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="https://chromewebstore.google.com/detail/slick-dash/bffgnckkngmebclpdjniofhenlnommkk">Chrome Web Store</a>
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/slick-dash/">Firefox Add-ons</a>
+          <a href="#features">Product</a>
+        </div>
+      </div>
+      <div class="contact-small">
+        contact: <a href="mailto:sriyan@slickdash.org">sriyan@slickdash.org</a>
       </div>
     </div>
   </footer>
