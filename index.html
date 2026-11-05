@@ -1,212 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slick Dash — Your Personal New Tab Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-chrome: #6366f1;
-            --accent-chrome-hover: #4f46e5;
-            --accent-firefox: #f97316;
-            --accent-firefox-hover: #ea580c;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(249, 115, 22, 0.08) 0%, transparent 40%);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            flex-grow: 1;
-            justify-content: center;
-        }
-
-        .badge {
-            background: rgba(99, 102, 241, 0.1);
-            color: #818cf8;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 24px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-            line-height: 1.1;
-        }
-
-        h1 span {
-            background: linear-gradient(135deg, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            color: var(--text-muted);
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            max-width: 600px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .preview-card {
-            width: 100%;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 30px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: left;
-        }
-
-        .feature-item {
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 16px;
-        }
-
-        .feature-item h3 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-            color: #f3f4f6;
-        }
-
-        .feature-item p {
-            font-size: 0.85rem;
-            margin-bottom: 0;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-chrome {
-            background: var(--accent-chrome);
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
-        }
-
-        .btn-chrome:hover {
-            background: var(--accent-chrome-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-firefox {
-            background: var(--accent-firefox);
-            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
-        }
-
-        .btn-firefox:hover {
-            background: var(--accent-firefox-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
-        }
-
-        footer {
-            padding: 24px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            width: 100%;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slick Dash - Custom New Tab</title>
+  <!-- Content Security Policy to block the Netlify badge if it ever returns -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+  <style>
+    :root {
+      --bg-color: #f9fafb;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --btn-chrome: #2563eb;
+      --btn-firefox: #ea580c;
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a.button {
+      text-decoration: none;
+      color: white;
+      padding: 0.875rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: opacity 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    a.button:hover { opacity: 0.9; }
+    a.button:active { transform: scale(0.98); }
+    .chrome { background-color: var(--btn-chrome); }
+    .firefox { background-color: var(--btn-firefox); }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="badge">✨ Available on Chrome & Firefox</div>
-        <h1>Transform Your New Tab Into <span>Slick Dash</span></h1>
-        <p>A calm, fully customizable dashboard featuring smart search, live weather, dynamic greetings, and your favorite quick links right at your fingertips.</p>
+  <h1>Slick Dash</h1>
+  <p>A cleaner, faster, and fully customizable new tab experience. Strip away the clutter and focus on what matters.</p>
 
-        <div class="preview-card">
-            <div class="feature-item">
-                <h3>⏰ Smart Greeting</h3>
-                <p>Personalized time-based welcome message every time you open a tab.</p>
-            </div>
-            <div class="feature-item">
-                <h3>🌤️ Live Weather</h3>
-                <p>Instant weather conditions right where you need them.</p>
-            </div>
-            <div class="feature-item">
-                <h3>🎨 Custom Themes</h3>
-                <p>Switch seamlessly between gradients, solid colors, and glass blur.</p>
-            </div>
-        </div>
-
-        <div class="btn-group">
-            <a href="https://chromewebstore.google.com/detail/slick-dash/bffgnckkngmebclpdjniofhenlnommkk" class="btn btn-chrome" target="_blank">
-                🌐 Add to Chrome 
-            </a>
-            <a href="https://addons.mozilla.org/addon/slick-dash/" class="btn btn-firefox" target="_blank">
-                🦊 Add to Firefox
-            </a>
-        </div>
-    </div>
-
-    <footer>
-        &copy 2026 Slick Dash. All right reserved.
-             contact: sriyan@slickdash.org
-    </footer>
+  <div class="buttons">
+    <a href="https://chromewebstore.google.com/detail/slick-dash/bffgnckkngmebclpdjniofhenlnommkk" class="button chrome">
+      Get for Chrome
+    </a>
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/slick-dash/" class="button firefox">
+      Get for Firefox
+    </a>
+  </div>
 
 </body>
 </html>
